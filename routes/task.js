@@ -22,13 +22,7 @@ router.get('/tasks/:id', function (req, res) {
 
 router.post('/tasks', function (req, res) {
       let newTask = req.body.task;
-      task.create(newTask, function (err, addedTask) {
-            if (err) throw err;
-            else {
-                  console.log(addedTask);
-                  res.redirect('/tasks');
-            }
-      })
+      TaskController.addNewTask(newTask, res);
 })
 
 router.delete('/tasks/:id', function (req, res) {

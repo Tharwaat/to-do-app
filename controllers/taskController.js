@@ -5,11 +5,19 @@ class taskController extends taskModel{
         super();
     }
 
-    addNewTask(newTask, callback){
-        this.addTask(newTask);
+    async addNewTask(newTask, res){
+        this.addTask(newTask).then(addedTask =>{
+            console.log("Task's been added!");
+            console.log(addedTask);
+            res.redirect('/tasks');
+        })
+        .catch(err =>{
+            console.log(err);
+            res.redirect('/tasks');
+        });
     }
 
-    deleteSelectedTask(id, callback){
+    deleteSelectedTask(id){
         this.deleteTask(id);
     }
 

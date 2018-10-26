@@ -14,10 +14,12 @@ class taskModel{
     }
 
     addTask(newTask){
-        task.create(newTask, function (err, addedTask) {
-            if (err) throw err;
-            else console.log(addedTask);
-        })
+        return new Promise(function(resolve, reject){
+            task.create(newTask, function (err, addedTask) {
+                if (err) reject (err);
+                else resolve(addedTask);                 
+            })
+        })        
     }
 
     deleteTask(id){
