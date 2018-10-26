@@ -1,0 +1,19 @@
+body{
+    background-color:#9f9dd4;
+    max-width: 500px;
+    margin: auto;
+}
+
+.h1{
+    align-content: center;
+}
+
+.btn{
+    align-self: center;
+    margin-left: 60px;
+}
+
+.card{
+    margin-top: 200px;
+    background-color:  	#fceddd;
+}
