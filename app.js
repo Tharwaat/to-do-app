@@ -5,7 +5,7 @@ const express        = require('express'),
       methodOverride = require('method-override'),
       BodyParser     = require('body-parser'),
       seed           = require('./seed'),
-      dbUrl          = 'mongodb://localhost:27017/todoApp',
+      dbUrl          = 'mongodb://mongo:27017/todoApp',
       TaskRoutes     = require('./routes/task');
 
 //Db Connection
