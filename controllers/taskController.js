@@ -17,8 +17,13 @@ class taskController extends taskModel{
         });
     }
 
-    deleteSelectedTask(id){
-        this.deleteTask(id);
+    deleteSelectedTask(id, res){
+        this.deleteTask(id).then(()=>{
+            res.redirect('/tasks');
+        })
+        .catch(err =>{
+            console.log(err);
+        })
     }
 
     async showAllTasks(){
@@ -28,8 +33,6 @@ class taskController extends taskModel{
             if(tasks) resolve(tasks);
             else reject(new Error("Error happend!"));
         })
-        //let tasks = await this.getAllTasks();
-        //console.log(tasks);
     }
 }
 module.exports = taskController;

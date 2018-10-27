@@ -26,9 +26,8 @@ router.post('/tasks', function (req, res) {
 })
 
 router.delete('/tasks/:id', function (req, res) {
-      let id = mongoose.Types.ObjectId(req.params.id);
-      
-      TaskController.deleteSelectedTask(id);     
+      let id = mongoose.Types.ObjectId(req.params.id);      
+      TaskController.deleteSelectedTask(id ,res);     
 })
 
 module.exports = router;

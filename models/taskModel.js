@@ -23,9 +23,14 @@ class taskModel{
     }
 
     deleteTask(id){
-        task.findByIdAndRemove(id, function(err){
-            if(err) throw err;
-            else console.log('Task removed successfuly!');
+        return new Promise(function(resolve, reject){
+            task.findByIdAndRemove(id, function(err){
+                if (err) reject (err);
+                else{
+                    console.log('Task removed successfuly!');
+                    resolve(true);
+                } 
+            })
         }) 
     }
 }
